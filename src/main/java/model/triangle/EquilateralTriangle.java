@@ -16,11 +16,7 @@ public class EquilateralTriangle extends Triangle {
     }
 
     @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder(this.getName());
+    protected void sidesToString(StringBuilder builder) {
         builder.append("\nCторона: ").append(firstSide);
-        builder.append("\nПериметр: ").append(getPerimeter());
-        builder.append("\nПлощадь: ").append(getSquare());
-        return builder.toString();
     }
 }

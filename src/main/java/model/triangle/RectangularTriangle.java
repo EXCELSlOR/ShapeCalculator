@@ -12,17 +12,17 @@ public class RectangularTriangle extends Triangle {
     }
 
     @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder(this.getName());
+    protected void sidesToString(StringBuilder builder) {
         builder.append("\nПервый катет: ").append(firstSide);
         builder.append("\nВторой катет: ").append(secondSide);
         builder.append("\nГипотенуза: ").append(thirdSide);
-        builder.append("\nПериметр: ").append(getPerimeter());
-        builder.append("\nПлощадь: ").append(getSquare());
-        return builder.toString();
     }
 
-    public double getHypotenuse(double firstCathet, double secondCathet) {
+    public double getHypotenuse() {
+        return getHypotenuse(firstSide, secondSide);
+    }
+
+    public static double getHypotenuse(double firstCathet, double secondCathet) {
         return Math.sqrt(Math.pow(firstCathet, 2) + Math.pow(secondCathet, 2));
     }
 }

@@ -17,12 +17,8 @@ public class IsoscelesTriangle extends Triangle {
     }
 
     @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder(this.getName());
+    protected void sidesToString(StringBuilder builder) {
         builder.append("\nБоковая сторона: ").append(firstSide);
         builder.append("\nОснование: ").append(thirdSide);
-        builder.append("\nПериметр: ").append(getPerimeter());
-        builder.append("\nПлощадь: ").append(getSquare());
-        return builder.toString();
     }
 }
