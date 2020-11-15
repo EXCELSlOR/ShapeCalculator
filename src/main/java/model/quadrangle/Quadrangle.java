@@ -1,8 +1,11 @@
 package model.quadrangle;
 
 import model.Shape;
+import model.ShapeType;
 
 public class Quadrangle extends Shape {
+
+    public ShapeType type;
 
     double firstSide;
     double secondSide;
@@ -12,6 +15,7 @@ public class Quadrangle extends Shape {
     protected Quadrangle(String name, double firstSide, double secondSide,
                          double thirdSide, double fourthSide) {
         super(name);
+        this.type = ShapeType.QUADRANGLE;
         this.firstSide = firstSide;
         this.secondSide = secondSide;
         this.thirdSide = thirdSide;

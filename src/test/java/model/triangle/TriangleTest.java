@@ -49,4 +49,26 @@ public class TriangleTest {
         Assert.assertEquals(triangle, triangle1);
         Assert.assertNotEquals(triangle, triangle2);
     }
+
+    @Test
+    public void constructorTest() {
+        Assert.assertThrows("Неверное значение первой стороны",
+                IllegalArgumentException.class,
+                () -> new Triangle(-4, 5, 6));
+        Assert.assertThrows("Неверное значение второй стороны",
+                IllegalArgumentException.class,
+                () -> new Triangle(4, 0, 6));
+        Assert.assertThrows("Неверное значение третьей стороны",
+                IllegalArgumentException.class,
+                () -> new Triangle(4, 5, Double.NaN));
+        Assert.assertThrows("Неверное значение первой стороны",
+                IllegalArgumentException.class,
+                () -> new Triangle(Double.POSITIVE_INFINITY, 5, 6));
+        Assert.assertThrows("Неверное значение второй стороны",
+                IllegalArgumentException.class,
+                () -> new Triangle(4, Double.NEGATIVE_INFINITY, 6));
+        Assert.assertThrows("Невозможно построить треугольник с заданными сторонами",
+                IllegalArgumentException.class,
+                () -> new Triangle(1, 2, 3));
+    }
 }

@@ -12,4 +12,16 @@ public class ValidateUtil {
         return side > 0;
     }
 
+    public static boolean isValidTriangle(double firstSide, double secondSide, double thirdSide) {
+        if (firstSide + secondSide <= thirdSide) {
+            return false;
+        }
+        if (firstSide + thirdSide <= secondSide) {
+            return false;
+        }
+        if (secondSide + thirdSide <= firstSide) {
+            return false;
+        }
+        return true;
+    }
 }

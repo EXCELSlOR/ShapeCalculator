@@ -73,6 +73,9 @@ public class Triangle extends Shape implements ISquare {
         if (!ValidateUtil.isValidSide(thirdSide)) {
             builder.append("Неверное значение третьей стороны!\n");
         }
+        if (!ValidateUtil.isValidTriangle(firstSide, secondSide, thirdSide)) {
+            builder.append("Невозможно построить треугольник с заданными сторонами!\n");
+        }
         String message = builder.toString();
         if (message.length() > 0) {
             message += "\b";
